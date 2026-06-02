@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClipHub - Grave e Compartilhe Seus Clipes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">▶</span>
+                    <span class="logo-text">ClipHub</span>
+                </div>
+                <div class="header-nav">
+                    <a href="#features">Recursos</a>
+                    <a href="#about">Sobre</a>
+                    <a href="#contact">Contato</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <div id="home" class="hero-section">
+                <div class="hero-background">
+                    <video class="hero-video" autoplay muted loop>
+                        <source src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAs0bYXV0" type="video/mp4">
+                    </video>
+                    <div class="hero-overlay"></div>
+                </div>
+                
+                <div class="hero-content">
+                    <h1 class="hero-title">Grave e Compartilhe Seus Clipes</h1>
+                    <p class="hero-subtitle">Capture o que acabou de acontecer com o pressionar de um botão e obtenha um link instantâneo para compartilhar em qualquer lugar.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToAuth('login')">Entrar</button>
+                        <button class="btn btn-secondary" onclick="scrollToAuth('signup')">Criar Conta</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auth Section -->
+            <section id="auth" class="auth-section">
+                <div class="auth-container">
+                    <!-- Login Form -->
+                    <div id="login" class="auth-form login-form active">
+                        <div class="form-header">
+                            <h2>Bem-vindo de volta</h2>
+                            <p>Faça login com sua conta ClipHub</p>
+                        </div>
+
+                        <form class="form" onsubmit="handleLogin(event)">
+                            <div class="form-group">
+                                <label for="login-email">Email</label>
+                                <input type="email" id="login-email" name="email" placeholder="seu.email@exemplo.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="login-password">Senha</label>
+                                <input type="password" id="login-password" name="password" placeholder="••••••••" required>
+                            </div>
+
+                            <div class="form-remember">
+                                <input type="checkbox" id="remember" name="remember">
+                                <label for="remember">Lembrar-me</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                        </form>
+
+                        <div class="form-divider">
+                            <span>ou</span>
+                        </div>
+
+                        <div class="social-buttons">
+                            <button class="btn-social" onclick="loginWithProvider('google')">
+                                <span class="social-icon">G</span>
+                                Google
+                            </button>
+                            <button class="btn-social" onclick="loginWithProvider('discord')">
+                                <span class="social-icon">D</span>
+                                Discord
+                            </button>
+                        </div>
+
+                        <div class="form-footer">
+                            <p>Não tem uma conta? <a href="#" onclick="switchForm('signup')">Cadastre-se</a></p>
+                            <p><a href="#" onclick="alert('Função de recuperação de senha')">Esqueceu a senha?</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Signup Form -->
+                    <div id="signup" class="auth-form signup-form">
+                        <div class="form-header">
+                            <h2>Comece agora</h2>
+                            <p>Crie sua conta ClipHub e comece a gravar</p>
+                        </div>
+
+                        <form class="form" onsubmit="handleSignup(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="signup-firstname">Nome</label>
+                                    <input type="text" id="signup-firstname" name="firstname" placeholder="Seu nome" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="signup-lastname">Sobrenome</label>
+                                    <input type="text" id="signup-lastname" name="lastname" placeholder="Seu sobrenome" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="signup-email">Email</label>
+                                <input type="email" id="signup-email" name="email" placeholder="seu.email@exemplo.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="signup-username">Nome de Usuário</label>
+                                <input type="text" id="signup-username" name="username" placeholder="seu_usuario" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="signup-password">Senha</label>
+                                <input type="password" id="signup-password" name="password" placeholder="••••••••" required>
+                                <div class="password-strength">
+                                    <div class="strength-bar" id="strength-bar"></div>
+                                </div>
+                                <small>Mínimo 8 caracteres</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="signup-confirm">Confirmar Senha</label>
+                                <input type="password" id="signup-confirm" name="confirm" placeholder="••••••••" required>
+                            </div>
+
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">Concordo com os <a href="#">Termos de Serviço</a> e <a href="#">Política de Privacidade</a></label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">Criar Conta</button>
+                        </form>
+
+                        <div class="form-divider">
+                            <span>ou</span>
+                        </div>
+
+                        <div class="social-buttons">
+                            <button class="btn-social" onclick="signupWithProvider('google')">
+                                <span class="social-icon">G</span>
+                                Google
+                            </button>
+                            <button class="btn-social" onclick="signupWithProvider('discord')">
+                                <span class="social-icon">D</span>
+                                Discord
+                            </button>
+                        </div>
+
+                        <div class="form-footer">
+                            <p>Já tem uma conta? <a href="#" onclick="switchForm('login')">Faça login</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features on the side -->
+                <div class="auth-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">📹</div>
+                        <h3>Grave em Alta Qualidade</h3>
+                        <p>Suporte até 4K em 144fps</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Instantâneo</h3>
+                        <p>Obtenha links compartilháveis em segundos</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎮</div>
+                        <h3>Suporte a 100+ Jogos</h3>
+                        <p>Clipagem automática em seus favoritos</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💾</div>
+                        <h3>Armazenamento Nuvem</h3>
+                        <p>Acesse seus clipes de qualquer lugar</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section id="features" class="features-section">
+                <h2>Por Que Escolher ClipHub?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-card-icon">🔧</div>
+                        <h3>Fácil de Usar</h3>
+                        <p>Interface intuitiva que qualquer um pode dominar</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card-icon">🌍</div>
+                        <h3>Compartilhamento Global</h3>
+                        <p>Compartilhe com o mundo em um clique</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card-icon">🚀</div>
+                        <h3>Desempenho Ultra Leve</h3>
+                        <p>Impacto mínimo no seu sistema</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card-icon">🔒</div>
+                        <h3>100% Seguro</h3>
+                        <p>Seus clipes estão sempre protegidos</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="dashboard-section hidden">
+                <div class="dashboard-header">
+                    <div class="dashboard-user-info">
+                        <div class="user-avatar">👤</div>
+                        <div>
+                            <h2 id="user-name">Bem-vindo</h2>
+                            <p id="user-email"></p>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary btn-small" onclick="logout()">Sair</button>
+                </div>
+
+                <div class="dashboard-content">
+                    <h1 class="games-title">◆ ESCOLHA O SEU JOGO ◆</h1>
+                    
+                    <div class="games-grid" id="games-grid">
+                        <!-- Games will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Game Modal -->
+                <div id="game-modal" class="modal hidden">
+                    <div class="modal-content">
+                        <span class="modal-close" onclick="closeGameModal()">&times;</span>
+                        <div class="modal-body">
+                            <div id="game-modal-content">
+                                <!-- Game details will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" id="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>ClipHub</h4>
+                    <p>A melhor forma de gravar e compartilhar clipes de jogos.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Recursos</a></li>
+                        <li><a href="#">Suporte</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Termos de Serviço</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ClipHub. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
