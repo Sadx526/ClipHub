@@ -84,7 +84,7 @@ const GAMES_DATA = [
         id: 1,
         name: 'Projeto - Guilherme',
         description: 'Um jogo Parkour',
-        icon: '',
+        image: 'imagens/Guilherme.png',
         plays: 1,
         likes: 38,
         author: 'Guilherme',
@@ -94,7 +94,7 @@ const GAMES_DATA = [
         id: 2,
         name: 'Projeto - Diego',
         description: 'Um jogo de Cartas',
-        icon: '',
+        image: 'imagens/Diego.png',
         plays: 0,
         likes: 18,
         author: 'Diego',
@@ -104,7 +104,7 @@ const GAMES_DATA = [
         id: 3,
         name: 'Projeto - Eduardo',
         description: 'Um jogo de Parkour',
-        icon: '',
+        image: 'imagens/Eduardo.png',
         plays: 1,
         likes: 1,
         author: 'Eduardo',
@@ -114,7 +114,7 @@ const GAMES_DATA = [
         id: 4,
         name: 'Projeto - Giovanna',
         description: 'Um jogo de ação',
-        icon: '',
+        image: 'imagens/Giovanna.png',
         plays: 0,
         likes: 38,
         author: 'Desenvolvedor',
@@ -124,7 +124,7 @@ const GAMES_DATA = [
         id: 5,
         name: 'Projeto - Yohan',
         description: 'Um jogo puzzle',
-        icon: '',
+        image: 'imagens/Yohan.png',
         plays: 0,
         likes: 38,
         author: 'Criador',
@@ -134,7 +134,7 @@ const GAMES_DATA = [
         id: 6,
         name: 'Projeto - Luiz',
         description: 'Um jogo de estratégia',
-        icon: '',
+        image: '',
         plays: 1,
         likes: 44,
         author: 'Master',
@@ -185,7 +185,9 @@ function createGameCard(game) {
     const isFavorited = favorites.includes(game.id);
     
     card.innerHTML = `
-        <div class="game-icon">${game.icon}</div>
+        <div class="game-image-container">
+            ${game.image ? `<img src="${game.image}" alt="${game.name}" class="game-image">` : '<div class="game-icon-placeholder"></div>'}
+        </div>
         <div class="game-name">${game.name}</div>
         <div class="game-description">${game.description}</div>
         <div class="game-stats">
