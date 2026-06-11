@@ -128,7 +128,7 @@ const GAMES_DATA = [
         plays: 0,
         likes: 38,
         author: 'Criador',
-        url: null
+        url: 'https://coruscating-biscuit-1ff3af.netlify.app/'
     },
     {
         id: 6,
