@@ -84,7 +84,7 @@ const GAMES_DATA = [
         id: 1,
         name: 'Projeto - Guilherme',
         description: 'Um jogo Parkour',
-        icon: '🎮',
+        icon: '',
         plays: 1,
         likes: 38,
         author: 'Guilherme',
@@ -94,7 +94,7 @@ const GAMES_DATA = [
         id: 2,
         name: 'Projeto - Diego',
         description: 'Um jogo de Cartas',
-        icon: '🍪',
+        icon: '',
         plays: 0,
         likes: 18,
         author: 'Diego',
@@ -104,7 +104,7 @@ const GAMES_DATA = [
         id: 3,
         name: 'Projeto - Eduardo',
         description: 'Um jogo de Parkour',
-        icon: '🚀',
+        icon: '',
         plays: 1,
         likes: 1,
         author: 'Eduardo',
@@ -114,7 +114,7 @@ const GAMES_DATA = [
         id: 4,
         name: 'Projeto - Giovanna',
         description: 'Um jogo de ação',
-        icon: '🎯',
+        icon: '',
         plays: 0,
         likes: 38,
         author: 'Desenvolvedor',
@@ -124,7 +124,7 @@ const GAMES_DATA = [
         id: 5,
         name: 'Projeto - Yohan',
         description: 'Um jogo puzzle',
-        icon: '👾',
+        icon: '',
         plays: 0,
         likes: 38,
         author: 'Criador',
@@ -134,7 +134,7 @@ const GAMES_DATA = [
         id: 6,
         name: 'Projeto - Luiz',
         description: 'Um jogo de estratégia',
-        icon: '🏆',
+        icon: '',
         plays: 1,
         likes: 44,
         author: 'Master',
@@ -190,11 +190,11 @@ function createGameCard(game) {
         <div class="game-description">${game.description}</div>
         <div class="game-stats">
             <div class="stat">
-                <span class="stat-icon">🎮</span>
+                <span class="stat-icon"></span>
                 <span>${game.plays} acessos</span>
             </div>
             <div class="stat">
-                <span class="stat-icon">❤️</span>
+                <span class="stat-icon"></span>
                 <span>${game.likes} likes</span>
             </div>
         </div>
