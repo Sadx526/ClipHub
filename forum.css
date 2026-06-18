@@ -1,0 +1,510 @@
+/* VOLTAR LINK */
+
+
+.voltar-link{
+    display: inline-block;
+
+
+    margin-top: 12px;
+
+
+    color: #4CAF50;
+
+
+    text-decoration: none;
+
+
+    font-size: 14px;
+}
+
+
+.voltar-link:hover{
+    text-decoration: underline;
+}
+
+
+/* CONTAINER DO FÓRUM */
+
+
+.forum-container{
+    max-width: 600px;
+
+
+    margin: 40px auto;
+
+
+    padding: 0 20px;
+}
+
+
+/* CAIXA DE LOGIN / CADASTRO */
+
+
+.auth-box{
+    background: #1f1f1f;
+
+
+    border-radius: 15px;
+
+
+    padding: 25px;
+
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+
+.auth-tabs{
+    display: flex;
+    gap: 10px;
+
+
+    margin-bottom: 20px;
+}
+
+
+.auth-tab{
+    flex: 1;
+
+
+    padding: 10px;
+
+
+    border: none;
+    border-radius: 8px;
+
+
+    background: #2a2a2a;
+    color: #bdbdbd;
+
+
+    font-weight: bold;
+    font-size: 15px;
+
+
+    cursor: pointer;
+
+
+    transition: 0.3s;
+}
+
+
+.auth-tab.active{
+    background: #4CAF50;
+    color: white;
+}
+
+
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.auth-form input,
+.post-form textarea{
+    padding: 12px;
+
+
+    border: none;
+    border-radius: 8px;
+
+
+    background: #2a2a2a;
+    color: white;
+
+
+    font-size: 15px;
+}
+
+
+.auth-form input:focus,
+.post-form textarea:focus{
+    outline: 2px solid #4CAF50;
+}
+
+
+.btn-auth{
+    padding: 12px;
+
+
+    border: none;
+    border-radius: 8px;
+
+
+    background: #4CAF50;
+    color: white;
+
+
+    font-weight: bold;
+    font-size: 15px;
+
+
+    cursor: pointer;
+
+
+    transition: 0.3s;
+}
+
+
+.btn-auth:hover{
+    background: #45a049;
+}
+
+
+.auth-erro{
+    color: #ff6b6b;
+    font-size: 14px;
+}
+
+
+.auth-sucesso{
+    color: #4CAF50;
+    font-size: 14px;
+}
+
+
+/* CABEÇALHO DO FÓRUM (logado) */
+
+
+.forum-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    margin-bottom: 20px;
+}
+
+
+#usuario-logado{
+    color: #bdbdbd;
+    font-size: 14px;
+}
+
+
+.btn-logout{
+    padding: 8px 14px;
+
+
+    border: none;
+    border-radius: 8px;
+
+
+    background: #2a2a2a;
+    color: #ff6b6b;
+
+
+    font-weight: bold;
+
+
+    cursor: pointer;
+
+
+    transition: 0.3s;
+}
+
+
+.btn-logout:hover{
+    background: #3a3a3a;
+}
+
+
+.forum-header-botoes{
+    display: flex;
+    gap: 8px;
+}
+
+
+.btn-admin-toggle{
+    padding: 8px 14px;
+
+
+    border: none;
+    border-radius: 8px;
+
+
+    background: #2a2a2a;
+    color: #bdbdbd;
+
+
+    font-weight: bold;
+
+
+    cursor: pointer;
+
+
+    transition: 0.3s;
+}
+
+
+.btn-admin-toggle:hover{
+    background: #3a3a3a;
+}
+
+
+.admin-form{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+
+    margin-bottom: 20px;
+}
+
+
+.admin-form input{
+    flex: 1;
+
+
+    padding: 10px;
+
+
+    border: none;
+    border-radius: 8px;
+
+
+    background: #2a2a2a;
+    color: white;
+
+
+    font-size: 14px;
+}
+
+
+.admin-form input:focus{
+    outline: 2px solid #4CAF50;
+}
+
+
+.admin-form .btn-auth{
+    padding: 10px 16px;
+    font-size: 14px;
+}
+
+
+.btn-excluir{
+    margin-top: 10px;
+    margin-left: 8px;
+
+
+    padding: 6px 12px;
+
+
+    border: none;
+    border-radius: 6px;
+
+
+    background: transparent;
+    color: #ff6b6b;
+
+
+    font-size: 13px;
+    font-weight: bold;
+
+
+    cursor: pointer;
+
+
+    transition: 0.3s;
+}
+
+
+.btn-excluir:hover{
+    background: rgba(255,107,107,0.15);
+}
+
+
+/* FORMULÁRIO DE POST */
+
+
+.post-form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+
+    margin-bottom: 30px;
+}
+
+
+.post-form textarea{
+    resize: vertical;
+    min-height: 80px;
+
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* LISTA DE POSTS */
+
+
+.lista-posts{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.post{
+    background: #1f1f1f;
+
+
+    border-radius: 12px;
+
+
+    padding: 15px 18px;
+
+
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+
+
+.post-autor{
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 14px;
+
+
+    margin-bottom: 6px;
+}
+
+
+.post-texto{
+    color: #e0e0e0;
+    font-size: 15px;
+    line-height: 1.4;
+
+
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+
+.post-data{
+    color: #777;
+    font-size: 12px;
+
+
+    margin-top: 8px;
+}
+
+
+.carregando,
+.sem-posts{
+    color: #777;
+    text-align: center;
+}
+
+
+/* RESPONDER */
+
+
+.btn-responder{
+    margin-top: 10px;
+
+
+    padding: 6px 12px;
+
+
+    border: none;
+    border-radius: 6px;
+
+
+    background: transparent;
+    color: #4CAF50;
+
+
+    font-size: 13px;
+    font-weight: bold;
+
+
+    cursor: pointer;
+
+
+    transition: 0.3s;
+}
+
+
+.btn-responder:hover{
+    background: rgba(76,175,80,0.15);
+}
+
+
+.form-resposta{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+
+    margin-top: 10px;
+}
+
+
+.form-resposta textarea{
+    padding: 10px;
+
+
+    border: none;
+    border-radius: 8px;
+
+
+    background: #2a2a2a;
+    color: white;
+
+
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+    resize: vertical;
+    min-height: 60px;
+}
+
+
+.form-resposta textarea:focus{
+    outline: 2px solid #4CAF50;
+}
+
+
+.form-resposta .btn-auth{
+    align-self: flex-start;
+
+
+    padding: 8px 14px;
+
+
+    font-size: 13px;
+}
+
+
+/* LISTA DE RESPOSTAS */
+
+
+.respostas{
+    margin-top: 12px;
+    margin-left: 20px;
+
+
+    padding-left: 15px;
+
+
+    border-left: 2px solid #333;
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.post-resposta{
+    background: #232323;
+    box-shadow: none;
+    padding: 12px 15px;
+}
+
+
+

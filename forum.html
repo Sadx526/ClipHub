@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórum - Meus Jogos</title>
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="forum.css">
+</head>
+<body>
+
+
+    <header>
+        <h1>Fórum da Turma</h1>
+        <p>Converse com a turma sobre os jogos</p>
+        <a href="index.html" class="voltar-link">&larr; Voltar para o menu</a>
+    </header>
+
+
+    <main class="forum-container">
+
+
+        <!-- LOGIN / CADASTRO -->
+        <section id="auth-section" class="auth-box">
+
+
+            <div class="auth-tabs">
+                <button id="tab-login" class="auth-tab active">Entrar</button>
+                <button id="tab-cadastro" class="auth-tab">Criar conta</button>
+            </div>
+
+
+            <form id="form-login" class="auth-form">
+                <input type="email" id="login-email" placeholder="E-mail" required>
+                <input type="password" id="login-senha" placeholder="Senha" required>
+                <button type="submit" class="btn-auth">Entrar</button>
+                <p id="login-erro" class="auth-erro"></p>
+            </form>
+
+
+            <form id="form-cadastro" class="auth-form" hidden>
+                <input type="email" id="cadastro-email" placeholder="E-mail" required>
+                <input type="password" id="cadastro-senha" placeholder="Senha (mín. 6 caracteres)" required minlength="6">
+                <button type="submit" class="btn-auth">Criar conta</button>
+                <p id="cadastro-erro" class="auth-erro"></p>
+                <p id="cadastro-sucesso" class="auth-sucesso"></p>
+            </form>
+
+
+        </section>
+
+
+        <!-- FÓRUM (só aparece logado) -->
+        <section id="forum-section" hidden>
+
+
+            <div class="forum-header">
+                <p id="usuario-logado"></p>
+                <div class="forum-header-botoes">
+                    <button id="btn-admin-toggle" class="btn-admin-toggle">Admin</button>
+                    <button id="btn-logout" class="btn-logout">Sair</button>
+                </div>
+            </div>
+
+
+            <form id="form-admin" class="admin-form" hidden>
+                <input type="password" id="admin-senha" placeholder="Senha de admin">
+                <button type="submit" class="btn-auth">Confirmar</button>
+                <p id="admin-erro" class="auth-erro"></p>
+            </form>
+
+
+            <form id="form-post" class="post-form">
+                <textarea id="post-texto" placeholder="Escreva sua mensagem..." required maxlength="500"></textarea>
+                <button type="submit" class="btn-auth">Publicar</button>
+                <p id="post-erro" class="auth-erro"></p>
+            </form>
+
+
+            <div id="lista-posts" class="lista-posts">
+                <p class="carregando">Carregando posts...</p>
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+        © 2026 - Alguns jogos da minha turma
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="forum.js"></script>
+
+
+</body>
+</html>
+
+
+
