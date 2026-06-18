@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClipHub - Grave e Compartilhe Seus Clipes</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+    /* Floating GIF bottom-left */
+    .floating-gif {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      overflow: hidden;
+      z-index: 2000;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+      pointer-events: none;
+    }
+    .floating-gif img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -301,6 +326,10 @@
         </div>
     </div>
 
+    <!-- Floating GIF in bottom-left -->
+    <div class="floating-gif" aria-hidden="true">
+        <img src="imagens/DonLorenzo.gif" alt="GIF">
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
